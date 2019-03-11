@@ -6,7 +6,7 @@ services:
         build: ./team1
         command: npm start
         working_dir: /opt/app
-        # uncomment the volume section in prod mode
+        # comment the volume section in prod mode
         # in dev mode : run npm install inside in the host
         volumes:
             - ./team1:/opt/app
@@ -19,7 +19,7 @@ services:
         build: ./team2
         command: npm start
         working_dir: /opt/app
-        # uncomment the volume section in prod mode
+        # comment the volume section in prod mode
         # in dev mode : run npm install inside in the host
         volumes:
             - ./team2:/opt/app
