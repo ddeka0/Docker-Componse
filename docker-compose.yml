@@ -1,0 +1,21 @@
+version: "3"
+services:
+    team1:
+        container_name: team1
+        image: team1
+        build: ./team1
+        command: npm start
+        volumes:
+            - ./team1:/opt/app
+        ports:
+            - "9091:8081"
+
+    team2:
+        container_name: team2
+        image: team2
+        build: ./team2
+        command: npm start
+        volumes:
+            - ./team2:/opt/app
+        ports:
+            - "9092:8082"

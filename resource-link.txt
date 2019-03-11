@@ -33,3 +33,8 @@ https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/mult
 
 
 https://medium.com/@tkssharma/building-microservices-containers-node-js-b74f4e232ec0
+
+
+
+
+https://stackoverflow.com/questions/31804236/export-of-locally-available-docker-image-to-local-file-system
