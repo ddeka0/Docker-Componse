@@ -13,7 +13,7 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
      4. open postman and try "http://localhost:9091/students"
 
 ## Note regarding docker-compose file
-         uncomment the volume section in prod mode
+         comment the volume section in prod mode
          in dev mode : run npm install inside in the host
 
 ## Contributing
