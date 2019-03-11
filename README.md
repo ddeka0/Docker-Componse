@@ -15,7 +15,7 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
 ![alt text](https://github.com/ddeka0/msp/blob/master/Screenshot%20from%202019-03-11%2023-38-30.png)
 
 ## Note regarding docker-compose file
-         comment the volume section in prod mode
+         uncomment the volume section in dev mode
          in dev mode : run npm install inside in the host
 
 ## Contributing
