@@ -6,10 +6,10 @@ services:
         build: ./team1
         command: npm start
         working_dir: /opt/app
-        # comment the volume section in prod mode
+        # uncomment the volume section in dev mode
         # in dev mode : run npm install inside in the host
-        volumes:
-            - ./team1:/opt/app
+        #volumes:
+        #    - ./team1:/opt/app
         ports:
             - "9091:8081"
 
@@ -19,9 +19,9 @@ services:
         build: ./team2
         command: npm start
         working_dir: /opt/app
-        # comment the volume section in prod mode
+        # uncomment the volume section in dev mode
         # in dev mode : run npm install inside in the host
-        volumes:
-            - ./team2:/opt/app
+        #volumes:
+        #    - ./team2:/opt/app
         ports:
             - "9092:8082"
