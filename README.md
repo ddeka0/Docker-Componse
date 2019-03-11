@@ -4,7 +4,7 @@ This is an example node js project to demonstrate docker compose. It has two ser
 demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
 
 ## Architecture
-![alt text](https://github.com/ddeka0/msp/blob/master/architecture.png)
+![alt text](https://github.com/ddeka0/msp/blob/master/compose-architecture.png)
 
 ## Instruction
 
