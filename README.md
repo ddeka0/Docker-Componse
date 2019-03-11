@@ -11,6 +11,8 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
      2. cd msp
      3. sudo docker-compose up
      4. open postman and try "http://localhost:9091/students"
+     
+![alt text](https://github.com/ddeka0/msp/blob/master/Screenshot%20from%202019-03-11%2023-38-30.png)
 
 ## Note regarding docker-compose file
          comment the volume section in prod mode
