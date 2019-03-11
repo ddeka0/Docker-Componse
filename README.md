@@ -12,6 +12,10 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
      3. sudo docker-compose up
      4. open postman and try "http://localhost:9091/students"
 
+## Note regarding docker-compose file
+         uncomment the volume section in prod mode
+         in dev mode : run npm install inside in the host
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
