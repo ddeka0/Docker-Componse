@@ -2,6 +2,10 @@
 
 This is an example node js project to demonstrate docker compose. It has two server and they communicate among each other.
 demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
+
+## Architecture
+![alt text](https://github.com/ddeka0/msp/blob/master/architecture.png)
+
 ## Instruction
 
      sudo apt-get install docker.io
