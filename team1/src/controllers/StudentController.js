@@ -1,7 +1,7 @@
 var Request = require("request");
 module.exports = {
 	students: async function (req, res) {
-		/* There are the names which belongs to Team2 server */
+		/* There are the names which belongs to Team1 server */
 
 		var names = ["Debashish", "Dhananjay", "Lokesh","Parth", "Sayali", "Heaven"];
 		
@@ -11,6 +11,7 @@ module.exports = {
 				let names2 = JSON.parse(body)
 				for(let i = 0, l = names2.length; i < l; i++) {
 					names.push(names2[i])
+					// combines all of the names in the names array
 				}
 			}else {
 				console.log(error)
