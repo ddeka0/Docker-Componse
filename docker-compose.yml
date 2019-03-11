@@ -5,6 +5,7 @@ services:
         image: team1
         build: ./team1
         command: npm start
+        working_dir: /opt/app
         volumes:
             - ./team1:/opt/app
         ports:
@@ -15,6 +16,7 @@ services:
         image: team2
         build: ./team2
         command: npm start
+        working_dir: /opt/app
         volumes:
             - ./team2:/opt/app
         ports:
