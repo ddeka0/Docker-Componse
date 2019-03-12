@@ -6,6 +6,8 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
 ## Architecture
 ![alt text](https://github.com/ddeka0/msp/blob/master/compose-architecture.png)
 
+Postman gets a response from Team1 server, which contains names of 12 stundets. Team1 server has 6 names locally. It fetches other 6 names from the Team2 server.
+
 ## Instruction
 
      sudo apt-get install docker.io
