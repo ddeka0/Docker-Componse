@@ -44,6 +44,12 @@ It is basically a JSON file. It has a container key with the values shown beflow
             }
         },
 
+Inside the `Team1` source code, we can request `Team2` server using the following `URL`.
+          
+          http://team2:9091/students
+
+where endpoint `/students` is the API created in the `Team2` server. `team2` automatically resolves to the `IPV4` address.
+
 ## Instruction to run the project
 
      sudo apt-get install docker.io
