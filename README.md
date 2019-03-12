@@ -1,14 +1,14 @@
 # msp
 
-This is an example node js project to demonstrate docker compose. It has two server and they communicate among each other.
+This is an example node js project to demonstrate `docker compos`e. It has two server and they communicate among each other.
 demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
 
 ## Architecture
 ![alt text](https://github.com/ddeka0/msp/blob/master/compose-architecture.png)
 
-Postman gets a response from Team1 server, which contains a list of names of 12 stundets. Team1 server has 6 names locally. It fetches other 6 names from the Team2 server.
+Postman gets a response from Team1 server, which contains a list of names of 12 stundets. `Team1` server has `6` names locally. It fetches other `6` names from the `Team2` server.
 
-Team1 and Team2 containers are attached to the same network created by the docker environment. The network name is "msp_default". Docker creates it automatically when we run docker-compose build command. We can view all the network by the following command.
+Team1 and Team2 containers are attached to the same network created by the docker environment. The network name is `msp_default`. Docker creates it automatically when we run `docker-compose build` command. We can view all the network by the following command.
           
           1. docker network ls 
           
@@ -21,11 +21,11 @@ Team1 and Team2 containers are attached to the same network created by the docke
           e7cc89889dd2        msp_default               bridge              local
           ae06630302b7        none                      null                local
           
-Then inspect the "msp_default" network. 
+Then inspect the `msp_default` network. 
           
           1. docker network inspect msp_default 
           
-It is basically a JSON file. It has a container key with the values shown beflow. The values contains all the network endpoints addresses.(layer2 and latyer3 addresses)           
+It is basically a `JSON` file. It has a container key with the values shown beflow. The values contains all the network endpoints addresses.(`layer2` and `latyer3` addresses)           
     
        "Containers": {
             "648486f163e2526d0fba8c5f1007a60d2b44fd9b5d58ee63e097bf84b428b281": {
@@ -64,13 +64,14 @@ where endpoint `/students` is the API created in the `Team2` server. `team2` aut
 
 ## Note regarding docker-compose file
          python folder is for single container explanation with dockerfile
-         uncomment the volume section in dev mode
-         in dev mode : run npm install inside in the host
+         
+         uncomment the volume section in dev mode in dev mode : run npm install inside in the host
          for example in this project
          1. uncomment the volumes sectin
          2. go to team1 and run npm install
          3. go to team2 and run npm install
          4. then to docker-compose up
+         
          why we are doing this ? this will help is development mode: auto reload of source files in the host 
          will be reflected inside the container
 
