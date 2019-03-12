@@ -6,7 +6,7 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
 ## Architecture
 ![alt text](https://github.com/ddeka0/msp/blob/master/compose-architecture.png)
 
-Postman gets a response from Team1 server, which contains a list of names of 12 stundets. `Team1` server has `6` names locally. It fetches other `6` names from the `Team2` server.
+`Postman` gets a response from Team1 server, which contains a list of names of 12 stundets. `Team1` server has `6` names locally. It fetches other `6` names from the `Team2` server.
 
 Team1 and Team2 containers are attached to the same network created by the docker environment. The network name is `msp_default`. Docker creates it automatically when we run `docker-compose build` command. We can view all the network by the following command.
           
@@ -48,7 +48,8 @@ Inside the `Team1` source code, we can request `Team2` server using the followin
           
           http://team2:9091/students
 
-where endpoint `/students` is the API created in the `Team2` server. `team2` automatically resolves to the `IPV4` address.
+where endpoint `/students` is the API created in the `Team2` server. `team2` automatically resolves to the `IPV4` address. `Postman` client will access any of the container using URL http://localhost:9091/students or http://localhost:9092/students.
+The ports `9091` and `9092` are mapped to the host side as specified in the `docker-compose.yml` file.
 
 ## Instruction to run the project
 
