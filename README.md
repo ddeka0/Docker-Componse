@@ -46,7 +46,7 @@ It is basically a `JSON` file. It has a container key with the values shown befl
 
 Inside the `Team1` source code, we can request `Team2` server using the following `URL`.
           
-          http://team2:9091/students
+          http://team2:8082/students
 
 where endpoint `/students` is the API created in the `Team2` server. `team2` automatically resolves to the `IPV4` address. `Postman` client will access any of the container using URL http://localhost:9091/students or http://localhost:9092/students.
 The ports `9091` and `9092` are mapped to the host side as specified in the `docker-compose.yml` file.
