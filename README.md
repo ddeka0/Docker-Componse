@@ -8,7 +8,7 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
 
 Postman gets a response from Team1 server, which contains a list of names of 12 stundets. Team1 server has 6 names locally. It fetches other 6 names from the Team2 server.
 
-Team1 and Team2 containers are attached to the same network created by the docker environment. The network name is "msp_default". We can view all the network by the following command.
+Team1 and Team2 containers are attached to the same network created by the docker environment. The network name is "msp_default". Docker creates it automatically when we run docker-compose build command. We can view all the network by the following command.
           
           1. docker network ls 
           
@@ -21,11 +21,30 @@ Team1 and Team2 containers are attached to the same network created by the docke
           e7cc89889dd2        msp_default               bridge              local
           ae06630302b7        none                      null                local
           
-Then inspect the "msp_default" network.          
+Then inspect the "msp_default" network. 
+          
+          1. docker network inspect msp_default 
+          
+It is basically a JSON file. It has a container key with the values shown beflow. The values contains all the network endpoints addresses.(layer2 and latyer3 addresses)           
     
-          TODO..
+       "Containers": {
+            "648486f163e2526d0fba8c5f1007a60d2b44fd9b5d58ee63e097bf84b428b281": {
+                "Name": "team1",
+                "EndpointID": "84836eec668b21efd67984a8aef377a990b0a84f9038fe024f2efb1bf9629f04",
+                "MacAddress": "02:42:ac:13:00:02",
+                "IPv4Address": "172.19.0.2/16",
+                "IPv6Address": ""
+            },
+            "64ef7069d7d91641f13047ead4a8fef6e24dc3ada5db500536a0540904237228": {
+                "Name": "team2",
+                "EndpointID": "4099c70760281928c298dadabbafdd228254de226325283d6a236c3ce34198d5",
+                "MacAddress": "02:42:ac:13:00:03",
+                "IPv4Address": "172.19.0.3/16",
+                "IPv6Address": ""
+            }
+        },
 
-## Instruction
+## Instruction to run the project
 
      sudo apt-get install docker.io
      sudo apt-get install docker-compose
