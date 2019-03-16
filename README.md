@@ -8,6 +8,49 @@ demo: https://www.youtube.com/watch?v=TxbL-2An8Hk
 
 `Postman` gets a response from Team1 server, which contains a list of names of 12 stundets. `Team1` server has `6` names locally. It fetches other `6` names from the `Team2` server.
 
+This is where `Team1` `/students` API is defined.
+          
+          // routes.js
+          const StudentController = require("./controllers/StudentController")
+          module.exports = {
+                    setRoutes : function(app) {
+                              console.log("Routes are setting up...\n\n")
+
+                              app.post("/students",
+                              StudentController.students)
+                    }
+          }
+
+And here is the definition of `students` function:
+          
+          // StudentController.js
+          var Request = require("request");
+          module.exports = {
+                    students: async function (req, res) {
+                              /* There are the names which belongs to Team1 server */
+                              var names = ["Debashish", "Dhananjay", "Lokesh","Parth", "Sayali", "Heaven"];
+                              /*fetch the other names from the Team2 server */
+                              Request.post("http://team2:8082/students", function (error, response, body) {		
+                                        if(!error) {
+                                                  let names2 = JSON.parse(body)
+                                                  for(let i = 0, l = names2.length; i < l; i++) {
+                                                            names.push(names2[i])
+                                                            // combines all of the names in the names array
+                                                  }
+                                        }else {
+                                                  console.log(error)
+                                        }
+                                        try {
+                                                  res.send(JSON.stringify(names))
+                                        } catch (err) {
+                                                  res.status(400).send({
+                                                            error: "Some Error in the server !"
+                                                  })
+                                        }
+                              });
+                    }
+          }
+
 Team1 and Team2 containers are attached to the same network created by the docker environment. The network name is `msp_default`. Docker creates it automatically when we run `docker-compose build` command. We can view all the network by the following command.
           
           1. docker network ls 
