@@ -1,3 +1,5 @@
+
+
 const StudentController = require("./controllers/StudentController")
 module.exports = {
 	setRoutes : function(app) {
